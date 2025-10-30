@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { projectsAPI, tasksAPI } from '../services/api';
 import type { ProjectDetail, Task } from '../types';
 import CreateTaskModal from '../components/CreateTaskModal';
@@ -8,7 +8,6 @@ import SchedulerModal from '../components/SchedulerModal';
 
 const ProjectDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [project, setProject] = useState<ProjectDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
