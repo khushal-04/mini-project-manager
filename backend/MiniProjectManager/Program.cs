@@ -53,7 +53,7 @@ if (!string.IsNullOrEmpty(connectionString) &&
         $"Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
 }
 
-
+Console.WriteLine($"✅ Using Connection String: {connectionString}");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
