@@ -39,7 +39,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Configure PostgreSQL database
-var connectionString = builder.Configuration.GetConnectionString("postgresql://neondb_owner:npg_Lay20MrEAYDX@ep-royal-frog-ad6l7c5u-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
